@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject _optionsPanel;
+    [SerializeField] private Fennec _fennecNPC;
     
     public void OpenOptions()
     {
-        optionsPanel.SetActive(true);
+        _optionsPanel.SetActive(true);
     }
     
     public void CloseOptions()
     {
-        optionsPanel.SetActive(false);
+        _optionsPanel.SetActive(false);
     }
 
     public void Next()
     {
-        //start the next dialogue after this is pressed.
+        _fennecNPC.Interact();
     }
 }
