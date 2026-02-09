@@ -6,7 +6,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _optionsPanel;
-    [SerializeField] private Fennec _fennecNPC;
     
     public void OpenOptions()
     {
@@ -16,10 +15,5 @@ public class UIManager : MonoBehaviour
     public void CloseOptions()
     {
         _optionsPanel.SetActive(false);
-    }
-
-    public void Next()
-    {
-        _fennecNPC.Interact();
     }
 }

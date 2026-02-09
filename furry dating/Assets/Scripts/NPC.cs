@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPC : MonoBehaviour, IInteractable
+public class Npc : MonoBehaviour
 {
+    public new string name;
+    public Dialogue dialogue;
+
     private void Start()
     {
-        Interact();
+        SpeakTo();
     }
-    public abstract void Interact();
+    
+    //Triggers Dialogue
+    public void SpeakTo()
+    {
+        DialogueController.Instance.StartDialogue(name, dialogue.rootNode);
+    }
 }
