@@ -353,6 +353,7 @@
 -analyzer:"/home/mae/Documents/GitHub/2022.3.62f3/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Dialogue/DialogueText.cs"
 "Assets/Scripts/DialogueController.cs"
+"Assets/Scripts/DialogueResponses.cs"
 "Assets/Scripts/Fennec.cs"
 "Assets/Scripts/IInteractable.cs"
 "Assets/Scripts/ITalkable.cs"
