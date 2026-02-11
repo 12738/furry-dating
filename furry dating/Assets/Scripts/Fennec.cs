@@ -15,6 +15,6 @@ public class Fennec : NPC, ITalkable
     public void Talk(DialogueText dialogueText)
     {
         //start convo
-        dialogueController.DisplayNextParagraph(dialogueText);
+        dialogueController.DisplayNext(dialogueText);
     }
 }
