@@ -3,10 +3,11 @@ Branch:                  2022.3/respin/2022.3.62f2-4af31df585-v2
 Build type:              Release
 Batch mode:              YES
 System name:             Linux
-Distro version:          #100-Ubuntu SMP PREEMPT_DYNAMIC Tue Jan 13 16:40:06 UTC 2026
-Kernel version:          6.8.0-100-generic
+Distro version:          #1 SMP PREEMPT_DYNAMIC Mon, 09 Feb 2026 17:16:33 +0000
+Kernel version:          6.18.9-arch1-2
 Architecture:            x86_64
-Available memory:        15691 MB
+Window Protocol:         Wayland (XWayland)
+Available memory:        32003 MB
 Assertion failed on expression: 'IsFileCreated(kWorkerLicensePath)'
 Assertion failed on expression: 'ok'
 Using pre-set license

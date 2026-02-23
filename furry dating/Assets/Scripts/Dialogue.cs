@@ -8,7 +8,7 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public string characterName;
-    public DialogueStorage[] linesTest;
+    public DialogueStorage[] dialogueLines;
     public int dialogueIndex = 0;
     public int responseIndex = 0;
     public TextMeshProUGUI textBox;
@@ -21,7 +21,7 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         name.text = characterName;
-        textBox.text = linesTest[dialogueIndex].lines[linesTest[dialogueIndex].lineIndex];
+        textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
     }
     
     /*
@@ -31,14 +31,14 @@ public class Dialogue : MonoBehaviour
     */
     public void ProceedText()
     {
-        if (linesTest[dialogueIndex].isQuestion)
+        if (dialogueLines[dialogueIndex].isQuestion)
         {
-            if (linesTest[dialogueIndex].lineIndex + 1 == linesTest[dialogueIndex].lines.Length)
+            if (dialogueLines[dialogueIndex].lineIndex + 1 == dialogueLines[dialogueIndex].lines.Length)
             {
                 nextButton.SetActive(false);
                 foreach (GameObject button in buttonResponse)
                 {
-                    button.GetComponentInChildren<TextMeshProUGUI>().text = linesTest[dialogueIndex].responses[responseIndex];
+                    button.GetComponentInChildren<TextMeshProUGUI>().text = dialogueLines[dialogueIndex].responses[responseIndex];
                     button.gameObject.SetActive(true);
                     responseIndex++;
                 }
@@ -46,14 +46,50 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                linesTest[dialogueIndex].lineIndex++;
-                textBox.text = linesTest[dialogueIndex].lines[linesTest[dialogueIndex].lineIndex];
+                dialogueLines[dialogueIndex].lineIndex++;
+                textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
             }
+        }
+        else if (dialogueLines[dialogueIndex].lineIndex + 1 == dialogueLines[dialogueIndex].lines.Length)
+        {
+            nextButton.SetActive(true);
+            textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
+            dialogueLines[dialogueIndex].lineIndex++;
         }
         else
         {
             EndDialogue();
         }
+    }
+
+    public void SelectResponse1()
+    {
+        dialogueIndex += 1;
+        foreach (GameObject button in buttonResponse)
+        {
+            button.SetActive(false);
+        }
+        ProceedText();
+    }
+
+    public void SelectResponse2()
+    {
+        dialogueIndex += 2;
+        foreach (GameObject button in buttonResponse)
+        {
+            button.SetActive(false);
+        }
+        ProceedText();
+    }
+
+    public void SelectResponse3()
+    {
+        dialogueIndex += 3;
+        foreach (GameObject button in buttonResponse)
+        {
+            button.SetActive(false);
+        }
+        ProceedText();
     }
     
     /*
