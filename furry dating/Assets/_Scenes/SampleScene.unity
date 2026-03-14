@@ -2627,30 +2627,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Mamab
-  linesTest:
+  dialogueLines:
   - lines:
-    - Hello! My name is Mamab.
-    - Im so thrilled to meet you here!
-    - In the...woods for some reason?
-    - Anyways, want to hang out?
+    - hello!
+    - how are you?
     responses:
-    - Sure!
-    - No...
-    - Ew...
+    - good
+    - bad
+    - ok
     lineIndex: 0
     isQuestion: 1
   - lines:
-    - Cool! Lets go to a restaurant!
+    - great
     responses: []
     lineIndex: 0
     isQuestion: 0
   - lines:
-    - Oh, ok...
+    - thats too bad
     responses: []
     lineIndex: 0
     isQuestion: 0
   - lines:
-    - Geez...You don't have to be so mean about it...
+    - whats up
     responses: []
     lineIndex: 0
     isQuestion: 0
