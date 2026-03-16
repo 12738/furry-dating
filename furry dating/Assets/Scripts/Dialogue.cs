@@ -18,17 +18,18 @@ public class Dialogue : MonoBehaviour
     [SerializeReference] private GameObject[] buttonResponse;
     
     
-    private void Start()
-    {
-        name.text = characterName;
-        textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
-    }
-    
     /*
      * When next button is pushed, switch to next dialogue.
      * Should be able to check when the player will need to respond to a dialogue.
      * Depending on the response, display appropriate text.
     */
+
+    public void BeginDialogue()
+    {
+        name.text = characterName;
+        textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
+    }
+    
     public void ProceedText()
     {
         if (dialogueLines[dialogueIndex].isQuestion)

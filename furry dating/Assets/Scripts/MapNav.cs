@@ -7,12 +7,13 @@ public class MapNav : MonoBehaviour
 {
     [SerializeReference] private GameObject map;
     [SerializeReference] private GameObject dialogueController;
-    [SerializeReference] private GameObject backgroundGO;
-    public Image background;
+    [SerializeReference] private List<GameObject> backgroundGO;
+    //public List<Sprite> backgroundSprites;
+    //private Image _background;
 
     void Awake()
     {
-        background = backgroundGO.GetComponent<Image>();
+        //_background = backgroundGO.GetComponent<Image>();
     }
 
     public void OpenMap()
@@ -44,17 +45,30 @@ public class MapNav : MonoBehaviour
     public void BarSetup()
     {
         map.SetActive(false);
-        background.tintColor = Color.black;
-        
+        backgroundGO[0].SetActive(true);
+        backgroundGO[1].SetActive(false);
+        backgroundGO[2].SetActive(false);
+        // _background.tintColor = Color.black;
+        // _background.sprite = backgroundSprites[0];
     }
 
     public void SchoolSetup()
     {
         map.SetActive(false);
+        backgroundGO[0].SetActive(false);
+        backgroundGO[1].SetActive(true);
+        backgroundGO[2].SetActive(false);
+        // _background.tintColor = Color.black;
+        // _background.sprite = backgroundSprites[1];
     }
 
     public void ForestSetup()
     {
         map.SetActive(false);
+        backgroundGO[0].SetActive(false);
+        backgroundGO[1].SetActive(false);
+        backgroundGO[2].SetActive(true);
+        // _background.tintColor = Color.black;
+        // _background.sprite = backgroundSprites[2];
     }
 }
