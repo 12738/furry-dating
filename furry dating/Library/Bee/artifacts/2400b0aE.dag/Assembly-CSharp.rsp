@@ -353,6 +353,7 @@
 -analyzer:"/home/mae/Documents/GitHub/2022.3.62f3/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Dialogue.cs"
 "Assets/Scripts/DialogueStorage.cs"
+"Assets/Scripts/MapNav.cs"
 -langversion:9.0
 /deterministic
 /optimize+
