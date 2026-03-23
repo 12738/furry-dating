@@ -12,8 +12,9 @@ public class Dialogue : MonoBehaviour
     public int dialogueIndex = 0;
     public int responseIndex = 0;
     public TextMeshProUGUI textBox;
-    public TextMeshProUGUI name;
+    public new TextMeshProUGUI name;
     public GameObject dialogueBox;
+    public MapNav mapNav;
     [SerializeReference] private GameObject nextButton;
     [SerializeReference] private GameObject[] buttonResponse;
     
@@ -27,6 +28,7 @@ public class Dialogue : MonoBehaviour
     public void BeginDialogue()
     {
         name.text = characterName;
+        dialogueBox.SetActive(true);
         textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
     }
     
@@ -49,6 +51,26 @@ public class Dialogue : MonoBehaviour
             {
                 dialogueLines[dialogueIndex].lineIndex++;
                 textBox.text = dialogueLines[dialogueIndex].lines[dialogueLines[dialogueIndex].lineIndex];
+            }
+        }
+
+        if (dialogueLines[dialogueIndex].isSceneTransition)
+        {
+            if (dialogueLines[dialogueIndex].lineIndex + 1 == dialogueLines[dialogueIndex].lines.Length)
+            {
+                if (dialogueLines[dialogueIndex].transitionLocation == "Forest")
+                {
+                    mapNav.ForestSetup();
+                    dialogueIndex++;
+                } else if (dialogueLines[dialogueIndex].transitionLocation == "Bar")
+                {
+                    mapNav.BarSetup();
+                    dialogueIndex++;
+                } else if (dialogueLines[dialogueIndex].transitionLocation == "School")
+                {
+                    mapNav.SchoolSetup();
+                    dialogueIndex++;
+                }
             }
         }
         else if (dialogueLines[dialogueIndex].lineIndex + 1 == dialogueLines[dialogueIndex].lines.Length)

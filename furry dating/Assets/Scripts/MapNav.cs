@@ -8,12 +8,13 @@ public class MapNav : MonoBehaviour
     [SerializeReference] private GameObject map;
     [SerializeReference] private GameObject dialogueController;
     [SerializeReference] private List<GameObject> backgroundGO;
+    [SerializeReference] private DayManager dayManager;
     //public List<Sprite> backgroundSprites;
     //private Image _background;
 
-    void Awake()
+    void Start()
     {
-        //_background = backgroundGO.GetComponent<Image>();
+        ForestSetup();
     }
 
     public void OpenMap()
@@ -48,6 +49,14 @@ public class MapNav : MonoBehaviour
         backgroundGO[0].SetActive(true);
         backgroundGO[1].SetActive(false);
         backgroundGO[2].SetActive(false);
+        foreach (NPC character in dayManager.characters)
+        {
+            character.prefab.SetActive(false);
+            if (character.location == "Bar")
+            {
+                character.prefab.SetActive(true);
+            }
+        }
         // _background.tintColor = Color.black;
         // _background.sprite = backgroundSprites[0];
     }
@@ -58,6 +67,14 @@ public class MapNav : MonoBehaviour
         backgroundGO[0].SetActive(false);
         backgroundGO[1].SetActive(true);
         backgroundGO[2].SetActive(false);
+        foreach (NPC character in dayManager.characters)
+        {
+            character.prefab.SetActive(false);
+            if (character.location == "School")
+            {
+                character.prefab.SetActive(true);
+            }
+        }
         // _background.tintColor = Color.black;
         // _background.sprite = backgroundSprites[1];
     }
@@ -68,6 +85,14 @@ public class MapNav : MonoBehaviour
         backgroundGO[0].SetActive(false);
         backgroundGO[1].SetActive(false);
         backgroundGO[2].SetActive(true);
+        foreach (NPC character in dayManager.characters)
+        {
+            character.prefab.SetActive(false);
+            if (character.location == "Forest")
+            {
+                character.prefab.SetActive(true);
+            }
+        }
         // _background.tintColor = Color.black;
         // _background.sprite = backgroundSprites[2];
     }

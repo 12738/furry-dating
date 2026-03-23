@@ -7,7 +7,9 @@ public class DialogueStorage
 {
     public string[] lines;
     public string[] responses;
+    public string transitionLocation;
     public int lineIndex = 0;
     public bool isQuestion;
-    
+    public bool isSceneTransition;
+
 }
