@@ -35,6 +35,50 @@ public class DayManager : MonoBehaviour
     {
         foreach (NPC character in characters)
         {
+            /*
+             * float areaChance = UnityEngine.Random.Range(0f, 1f);
+             * switch(character.name)
+             * {
+             *      case "Leah":
+             *      if (timeOfDay == 0)
+             * {
+             *      if (areaChance <= .1f)
+             *  {
+             *      character.location = "Forest";
+             *  }else if (areaChance <= .3f)
+             *  {
+             *      character.location = "School";
+             *  }else if (areaChance <= 1f)
+             *  {
+             *      character.location = "Bar";
+             *  }
+             * }
+             *      else if (timeOfDay == 1)
+             * {
+             *      if (areaChance <= .1f)
+             *  {
+             *      character.location = "Forest";
+             *  }else if (areaChance <= .3f)
+             *  {
+             *      character.location = "School";
+             *  }else if (areaChance <= 1f)
+             *  {
+             *      character.location = "Bar";
+             *  }
+             *      else if (timeOfDay == 2)
+             * {
+             *      if (areaChance <= .1f)
+             *  {
+             *      character.location = "Forest";
+             *  }else if (areaChance <= .3f)
+             *  {
+             *      character.location = "School";
+             *  }else if (areaChance <= 1f)
+             *  {
+             *      character.location = "Bar";
+             *  }
+             * }
+             */
             float areaChance = UnityEngine.Random.Range(0f, 1f);
             if (areaChance <= .3f)
             {
